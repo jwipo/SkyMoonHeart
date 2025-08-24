@@ -1,0 +1,296 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            $(function(){
+                var $header = $('header'); //헤더를 변수에 넣기
+                var $page = $('.hashtag2'); //색상이 변할 부분
+                var $window = $(window);
+                var pageOffsetTop = $page.offset().top;//색상 변할 부분의 top값 구하기
+                
+                $window.resize(function(){ //반응형을 대비하여 리사이즈시 top값을 다시 계산
+                    pageOffsetTop = $page.offset().top;
+                });
+                
+                $window.on('scroll', function(){ //스크롤시
+                    var scrolled = $window.scrollTop() >= pageOffsetTop; //스크롤된 상태; true or false
+                    $header.toggleClass('down', scrolled); //클래스 토글 
+                });
+            });
+        </script>
+        
+        
+        <style>
+            .inner 
+            {
+            max-width:1200px;
+            padding:0 20px;
+            width: 30%;
+            height: 60px;
+            }
+            header 
+            {
+            position:fixed;
+            width:100%;
+            top:0;
+            left:0;
+            height:65px;
+            background-color:rgba(255, 255, 255, 0);
+            -webkit-transition-duration:0.8s;
+            -webkit-transition-timing-function:ease;
+            transition-duration:0.8s;
+            transition-timing-function:ease;
+            
+            }
+            .down 
+            {
+            background-color:rgba(255, 255, 255, 1);
+            -webkit-transition-duration:0.8s;
+            -webkit-transition-timing-function:ease;
+            transition-duration:0.8s;
+            transition-timing-function:ease;
+            }
+            body 
+            {
+            margin:0;
+            padding:0;
+            font-family:sans-serif;
+            background-repeat: no-repeat;
+            -ms-overflow-style: none;
+            }
+            .ani 
+            {
+            background-image: url(ezgif.com-gif-maker.gif);
+            background-position: center;
+            background-size: cover;
+            }
+            .topbanner1
+            {
+                width: 20px; height: 20px; 
+                margin-top: 0.6%;
+                margin: -35px 130px;
+                
+            }
+            .topbanner2
+            {
+                width: 80px; height: 20px; 
+                margin-top: 0.6%;
+                margin: 15px 160px;
+            }
+            .topbanner3
+            {
+                width: 65px; height: 20px; 
+                margin-top: 0.6%;
+                margin: -35px 250px;
+            }
+            .toptag
+            {
+                color: rgb(19, 216, 255);
+                transition: all 0.6s ease;
+            }
+            .toptag:hover
+            {
+                color: rgb(19, 216, 255);
+            }
+            .toptag2
+            {
+                color: black;
+                transition: all 0.6s ease;
+            }
+            .toptag2:hover
+            {
+                color: rgb(19, 216, 255);
+            }
+            a:link, a:visited, a:active {text-decoration: none;}
+            .top-magnifier
+            {
+                display: block;
+                overflow: hidden;
+                border-radius: 50%;
+                background-image: url("search-icon-file.png");
+                width: 35px; height: 35px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 5px 290%;
+                transition: all 1s ease;
+                opacity: 0.6;
+            }
+            .top-magnifier:hover
+            {
+                opacity: 1;
+            }
+            .top-login
+            {
+                width: 100px; height: 40px;
+                margin:-40px 301%;
+                transition: all 1s ease;
+                font-size: 0.5rem;
+                opacity: 0.6;
+            }
+            .top-login:hover
+            {
+                opacity: 1;
+            }
+            .top-login1
+            {
+                color:black
+            }
+            .top-login1:hover
+            {
+                color:black
+            }
+            .hashtag2
+            {
+                color: white;
+            }
+            .logo
+            {
+                width: 110px; height: 50px; 
+                background-image: url("KakaoTalk_20220602_111450084.png");
+                background-size: cover;
+                margin-top: 1.5%;
+            }
+            .banner 
+            {
+            width: 100%;
+            height: 112%;
+            margin: -6% 0;
+            border: 0;
+            background-color: black;
+            }
+            .anibox1
+            {
+            width: 90%;
+            height: 200%;
+            margin: 4vw;
+            margin-top: -21vh;
+            }
+            .anibox2
+            {
+            width: 106.65%;
+            height: 250px;
+            border: 0;
+            margin-top: -50px;
+            }
+            .anibox2-1
+            {
+            width: 106.65%;
+            height: 300px;
+            border: 0;
+            margin: -15 0;
+            }
+            .anibox2-2
+            {
+            width: 106.65%;
+            height: 250px;
+            border: 0;
+            margin: -15 0;
+            }
+            .anibox3
+            {
+            width: auto;
+            height: 150px;
+            background-color:ghostwhite;
+            margin-top: 50%;
+            opacity: 0.92;
+            }
+            .under-logo
+            {
+                margin: 30 60;
+                height: 30%;
+                width: 7%;
+            }
+            .under-information
+            {
+                width: 250px;
+                height: 30px;
+                margin: -88 230;
+            }
+            .un-1
+            {
+                width: 65px;
+                height: auto;
+                color: black;
+                float: left;
+                margin: 5 0;
+            }
+            .un-2
+            {
+                width: 65px;
+                height: auto;
+                color: black;
+                float: left;
+                margin: 5 10;
+            }
+            .un-3
+            {
+                width: 90px;
+                height: 10px;
+                color: black;
+                float: left;
+                margin: -15 0;
+                font-size: 0.8rem;
+            }
+            ::-webkit-scrollbar {
+            display: none;
+            }
+        </style>
+    </head>
+
+    <body class="ani">
+        
+        <header>
+                <div class="inner">
+                <a href="천월심.html"><div class="logo"></div></a>
+                <div class="topbanner1"><a class="toptag">홈</a>
+                </div>
+                <div class="topbanner2"><a class="toptag2" href="기말1.html">요일별신작</a>
+                </div>
+                <div class="topbanner3"><a class="toptag2" href="기말1.html">테마추천</a>
+                </div>
+                <a href="천월심-검색바.html" target="top-magnifier1"><div class="top-magnifier"></div></a>
+                <div class="top-login"><a href="천월심-로그인창.html" class="top-login1" target=""><h1>로그인/가입</h1></a></div>
+                </div>
+        </header>
+        <iframe name="top-magnifier1" style="width: 17%; height: 6%; border: 0; position: absolute; position: fixed; margin: 8px 1180px;"></iframe>
+        <iframe class="banner" src="천월심-배너.html">
+        </iframe>
+        
+        <div class="anibox1">
+            <br>
+            <br>
+            <h1 clfass="hashtag2">2분기 인기 콘텐츠</h1>
+            <br>
+            <iframe class="anibox2" src="천월심2.html">
+            </iframe>
+            <h1 class="hashtag2">요일별 신작</h1>
+            <iframe class="anibox2-1" name="video-media0" src="천월심2-1.html">
+            </iframe>
+            <h1 class="hashtag2" style="margin-top: -50px;">천월심 애니 추천작</h1>
+            <iframe class="anibox2-2" src="천월심3.html">
+            </iframe>
+            <h1 class="hashtag2">가슴이 웅장해지는 애니모음</h1>
+            <iframe class="anibox2-2" src="천월심4.html">
+            </iframe>
+            <h1 class="hashtag2">노래가 명작인 애니모음</h1>
+            <iframe class="anibox2-2" src="천월심5.html"></iframe>
+            <h1 class="hashtag2">힐링물을 즐기고 싶을때</h1>
+            <iframe class="anibox2-2" src="천월심6.html"></iframe>
+            <h1 class="hashtag2">오타쿠가 세계을 지배한다!</h1>
+            <iframe class="anibox2-2" src="천월심7.html"></iframe>
+            <h1 class="hashtag2">지브리 명작 모음</h1>
+            <iframe class="anibox2-2" src="천월심8.html"></iframe>
+        </div>
+        <div class="anibox3">
+            <img src="KakaoTalk_20220602_111450084.png" class="under-logo">
+            <div class="under-information">
+                <a href="천월심-회사소개.html"><div class="un-1"><h4>회사소개</h4></div></a>
+                <a href="천월심-공지사항.html"><div class="un-2"><h4>공지사항</h4></div></a>
+                <a href="천월심-이용약관.html"><div class="un-1"><h4>이용약관</h4></div></a>
+                <div class="un-3"><h4>천월심 이메일: <a href="mailto:taeyun7527@naver.com" style="color: black;">taeyun7527@naver.com</a></h4></div>
+            </div>
+            </table>
+        </div>
+    
+    </body>
+</html>
